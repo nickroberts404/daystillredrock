@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Days 'Till Red Rock</title>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 	<style>
 		html, body {
 			height: 100%;
@@ -16,18 +18,25 @@
 		}
 		h1 {
 			color: white;
-			background: rgba(0, 0, 0, 0.5);
-			border-radius: 10px;
-			font-family: 'Helvetica', Arial, sanserif;
-			font-weight: lighter;
+			background: rgba(0, 0, 0, 0.6);
+			border-radius: 5px;
+			font-family: 'Open Sans', Arial, sanserif;
+			font-weight: 300;
 			padding: 20px;
+		}
+		#days {
+			font-weight: 700;
+			color: pink;
 		}
 	</style>
 </head>
 <body>
 	<h1> Days Until Red Rock: <span id="days">7</span></h1>
 	<script>
-		
+		var now = moment();
+		var redrock = moment("2016-03-12");
+		var daysUntil = moment.duration(now - redrock).days();
+		document.getElementById('days').innerHTML = Math.abs(daysUntil);
 	</script>
 </body>
 </html>
